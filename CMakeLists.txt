@@ -50,7 +50,7 @@ if(CCACHE_FOUND)
 endif(CCACHE_FOUND)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wall -Wextra -Werror -Wno-class-memaccess -Wno-implicit-fallthrough -Wno-deprecated-declarations")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wall -Wextra -Werror -Wno-class-memaccess -Wno-implicit-fallthrough -Wno-deprecated-declarations -Wno-stringop-overflow -Wno-format-overflow")
     if (RAPIDJSON_BUILD_CXX11)
         if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS "4.7.0")
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
